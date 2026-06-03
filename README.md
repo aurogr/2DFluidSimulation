@@ -51,10 +51,10 @@ Fluid-Implicit-Particle (FLIP) and Particle-in-Cell (PIC) are hybrid formulation
 <p align="center"><img  width="359" height="360" alt="flii" src="https://github.com/user-attachments/assets/91aac883-35a2-4b1d-b86f-36ed5b26276d" /></p>
 
 ## APIC (Hybrid liquid simulation)
-In the code Affine-Particle in Cell (APIC) is an upgrade from flip, so it can't be enabled if both xx and xx aren't active.  
+In the code Affine-Particle in Cell (APIC) is an upgrade from flip, so it can't be enabled if both `flipEnabled` and `apicpEnabled` aren't active.  
 APIC follows the same concept as the methods seen before, but fixing both the dissipation of PIC and the instability of FLIP, at the cost of computational power. By storing not just the velocity of a particle, but also the local velocity gradient, it can make a more informed calculation, to keep information of vortices, shearing, and complex rotational behaviors that FLIP and PIC typically lose or distort. 
 
-* During the Particle-to-Grid phase, this gradient allows particles to make a much more informed, structurally accurate velocity contribution to the grid nodes.
+* During the Particle-to-Grid phase, this gradient allows particles to make a more informed, structurally accurate velocity contribution to the grid nodes.
 * During the Grid-to-Particle phase, the spatial derivatives of the grid's interpolation weights are calculated to update the particle's gradient matrices.
 
 <p align="center"><img width="359" height="360" alt="api" src="https://github.com/user-attachments/assets/e2cc4dd9-4cd5-476b-abaf-353dc8190e0a" /></p>
